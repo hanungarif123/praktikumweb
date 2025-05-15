@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile  - Web Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            
+        }
+        
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("backgroundweb.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 60px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+
+        .about {
+            background: #fff;
+        }
+        .about h2{
+            padding: 30px 0;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            text-align: justify;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+    
+        .services {
+            background: #f1f1f1;
+            
+        }
+        .services h2{
+            padding: 30px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            text-align: justify;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card i {
+            display: flex;
+            justify-content: center;
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            text-align: center;
+        }
+        
+        .contact {
+            background: #fff;
+        }
+        .contact h2{
+            padding: 30px 0;
+        }
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            padding: 30px 0;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .footer-section {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #bdc3c7;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #3498db;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-section {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Web Developer</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#contact">Kontak Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Solusi Teknologi Pengembangan Web yang Inovatif</h1>
+                <p>Sebagai Web Developer yang berspesialisasi dalam membangun situs web dan aplikasi web yang cepat, responsif, dan mudah digunakan. Kami sangat tertarik dengan transformasi digital dan percaya bahwa teknologi web dapat memberikan solusi untuk berbagai kebutuhan bisnis.</p>
+                <a href="#contact" class="btn">Hubungi Kami Segera</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="text-center">Tentang Web Developer</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Seorang pengembang web adalah seorang profesional yang berspesialisasi dalam mendesain, membangun, dan memelihara situs web. Mereka memainkan peran penting dalam dunia digital saat ini, di mana kehadiran online sangat penting bagi bisnis dan individu. Tugas utama seorang web developer termasuk mengembangkan antarmuka pengguna (front-end), mengelola server dan basis data (back-end), dan mengintegrasikan berbagai teknologi untuk menciptakan pengalaman pengguna yang optimal.</p>
+                    <p>Kami percaya bahwa website bukan hanya tentang tampilan, tetapi juga tentang pengalaman pengguna, performa, dan hasil yang nyata. Oleh karena itu, kami mengerjakan setiap proyek dengan detail, mulai dari struktur kode yang rapi, desain yang responsif di semua perangkat, hingga kecepatan dan optimasi SEO agar mudah ditemukan di Google.</p>
+                </div>
+                <div class="about-image">
+                    <img src="webdeveloper.jpg" alt="Web Developer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="text-center">Layanan Kami</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Custom Software Development</h3>
+                    <p>Kami membangun solusi perangkat lunak khusus yang dirancang untuk memenuhi kebutuhan bisnis spesifik Anda dan merampingkan operasi Anda.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile App Development</h3>
+                    <p>Tim kami menciptakan aplikasi seluler berkinerja tinggi untuk platform iOS dan Android yang melibatkan pengguna dan mendorong pertumbuhan bisnis.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Solutions</h3>
+                    <p>Kami membantu bisnis bermigrasi dan mengoptimalkan platform cloud untuk meningkatkan skalabilitas, keamanan, dan efisiensi biaya</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Lindungi bisnis Anda dari ancaman digital dengan layanan keamanan siber yang komprehensif dan solusi penilaian risiko.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analytics</h3>
+                    <p>Ubah data Anda menjadi wawasan yang dapat ditindaklanjuti dengan solusi analitik canggih dan alat bantu intelijen bisnis kami.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>IT Consulting</h3>
+                    <p>Pakar kami memberikan panduan strategis untuk membantu Anda membuat keputusan teknologi yang tepat dan selaras dengan tujuan bisnis Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="text-center">Kontak Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Hubungi Segera</h3>
+                    <p>Kami siap membantu Anda mewujudkan ide digital Anda menjadi kenyataan. Jangan ragu untuk menghubungi kami untuk konsultasi, pertanyaan, atau kerja sama proyek.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jalan Mawar No.123 Yogyakarta, Indonesia</p>
+                    <p><i class="fas fa-phone"></i> 0895605915578</p>
+                    <p><i class="fas fa-envelope"></i> hanungarifyk@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Senin - Jumat : 9:00 - 18:00 </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/hnungg__"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@hnungg_"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/+62895605915578"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>Sebagai Web Developer yang berspesialisasi dalam membangun situs web dan aplikasi web yang cepat, responsif, dan mudah digunakan. Saya sangat tertarik dengan transformasi digital dan percaya bahwa teknologi web dapat memberikan solusi untuk berbagai kebutuhan bisnis.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#contact">Kontak Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="#services">Software Development</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">Cloud Solutions</a></li>
+                        <li><a href="#services">Cybersecurity</a></li>
+                        <li><a href="#services">Data Analytics</a></li>
+                        <li><a href="#services">IT Consulting</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025. Web Developer Building a Better Tomorrow with Software</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
